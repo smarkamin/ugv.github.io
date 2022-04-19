@@ -1,0 +1,62 @@
+  {% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+  <div class="container bg-dark">
+    <h1>All of your submissions</h1>
+    <br />
+
+    <div class="bg-light center m-auto" style="height: 1125px;width: 795px;">
+      <div class="row">
+        <div class="col-4 ">
+          <img src="images/{{ last.image }}" width="160px" height="200px" alt="">
+        </div>
+        <div class="col-4 text-center"><br><br><br><h2 class="">UGV addmission form</h2>Submitted:{{ date }}</div>
+        <div class="col-4"><img src="images/{{ last.qr_code }}" width="200px" height="" alt=""></div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="container m-5 d-flex">
+          <div class="row">
+
+          <div class="col-6"> <p>Student Name &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.sName }}</p> </div>
+          <div class="col-6"> <p>Contract &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.cNum }}</p> </div>
+          <div class="col-6"> <p>Email &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.email }}</p> </div>
+          <div class="col-6"> <p>Gender &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.gender }}</p> </div>
+          <div class="col-6"> <p>Date of Birth &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.doBirth }}</p> </div>
+          <div class="col-6"> <p>Blood Group &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.bGroup }}</p> </div>
+          <div class="col-6"> <p>Quota &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.quota }}</p> </div>
+          <div class="col-6"> <p>Religion &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.religion }}</p> </div>
+
+          
+          <br><br>
+          <br>
+          <div class="col-12 text-center"><h4>Family Background</h4> </div> <br><br><br>
+          <div class="col-6"> <p>Father Name &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.fName }}</p> </div>
+          <div class="col-6"> <p>Father Number &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.fcNum }}</p> </div>
+          <div class="col-6"> <p>Father Occupation &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.fOccu }}</p> </div>
+          
+          <div class="col-6"> <p>Mother Name &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.mName }}</p> </div>
+          <div class="col-6"> <p>Mother Number &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.mcNum }}</p> </div>
+          <div class="col-6"> <p>Mother Occupation &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.mOccu }}</p> </div>
+          <br><br>
+          <br>
+          <div class="col-12 text-center"><h4>Education Background</h4> </div><br><br><br>
+          <div class="col-4"> <p>Exam title &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eTitle1 }}</p> <p>Board &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.board1 }}</p><p>Group &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eGroup1 }}</p><p>Roll &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.bRoll1 }}</p><p>Result &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eResult1 }}</p><p>Pass Year &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.pYear1 }}</p><p>Institute &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.insName1 }}</p></div>
+    
+          
+
+          <div class="col-4"> <p>Exam title &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eTitle2 }}</p><p>Board &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.board2 }}</p><p>Group &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eGroup2 }}</p><p>Roll &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.bRoll2 }}</p><p>Result &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eResult2 }}</p><p>Pass Year &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.pYear2 }}</p><p>Institute &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.insName2 }}</p> </div>
+
+          <div class="col-4"> <p>Degree title &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.dName1 }}</p><p>University &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.uBoard1 }}</p><p>Group &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.mGroup1 }}</p><p>Roll &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.bRoll3 }}</p><p>Result &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.eResult3 }}</p><p>Pass Year &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.pYear3 }}</p><p>Institute &nbsp;&nbsp; : &nbsp;&nbsp;  {{ last.insName3 }}</p> </div>
+
+          
+          
+        </div>
+          
+        </div>
+      </div>   
+      <center><a href="{% url 'pdf' %}" class="mb-5"><div class="btn btn-outline-primary center">Download PDF</div></a></center> <br><br>
+    </div>
+
+    <br />
+  </div>
+  {% endblock %}

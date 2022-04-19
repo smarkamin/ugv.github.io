@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<div class="container">
+    <h1>Add Venue To Database</h1>
+    <br /><br /> {% if submitted %} Your Venue Was Submitted Succefully!!! <a href="{% url 'submission' %}">Here</a> {% else %}
+
+    <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br /><br />
+        <div class="row">
+            <div class="col-6" style="">
+                <h3>Personal Information</h3>
+                {{ form.inProgram|as_crispy_field }} {{ form.shift|as_crispy_field }} {{ form.session|as_crispy_field }} {{ form.section|as_crispy_field }} {{ form.pAds|as_crispy_field }} {{ form.bCert|as_crispy_field }} {{ form.quota|as_crispy_field }}
+                <br> {{ form.image|as_crispy_field }}
+
+            </div>
+            <div class="col-6" style="">
+                <h3>.</h3>
+                {{ form.sName|as_crispy_field }} {{ form.cNum|as_crispy_field }} {{ form.email|as_crispy_field }} {{ form.gender|as_crispy_field }} {{ form.doBirth|as_crispy_field }} {{ form.religion|as_crispy_field }} {{ form.bGroup|as_crispy_field }} {{ form.nationality|as_crispy_field }}
+            </div>
+        </div>
+
+        <br /><br />
+        <div class="">
+            <h3>Family Background</h3>
+            {{ form.fName|as_crispy_field }} {{ form.fcNum|as_crispy_field }} {{ form.fOccu|as_crispy_field }} {{ form.fEmail|as_crispy_field }} {{ form.mName|as_crispy_field }} {{ form.mcNum|as_crispy_field }} {{ form.mOccu|as_crispy_field }} {{ form.mEmail|as_crispy_field  }}
+        </div>
+        <br /><br />
+
+        <h3>Educational Background</h3>
+        <div class="row">
+            <div class="col-3">
+                {{ form.eTitle1|as_crispy_field }} {{ form.board1|as_crispy_field }} {{ form.eGroup1|as_crispy_field }} {{ form.bRoll1|as_crispy_field }} {{ form.eResult1|as_crispy_field }} {{ form.pYear1|as_crispy_field }} {{ form.insName1|as_crispy_field }}
+            </div>
+            <div class="col-3">
+                {{ form.eTitle2|as_crispy_field }} {{ form.board2|as_crispy_field }} {{ form.eGroup2|as_crispy_field }} {{ form.bRoll2|as_crispy_field }} {{ form.eResult2|as_crispy_field }} {{ form.pYear2|as_crispy_field }} {{ form.insName2|as_crispy_field }}
+            </div>
+            <div class="col-3">
+                {{ form.dName1|as_crispy_field }} {{ form.uBoard1|as_crispy_field }} {{ form.mGroup1|as_crispy_field }} {{ form.bRoll3|as_crispy_field }} {{ form.eResult3|as_crispy_field }} {{ form.pYear3|as_crispy_field }} {{ form.insName3|as_crispy_field }}
+            </div>
+            <div class="col-3">
+                {{ form.dName2|as_crispy_field }} {{ form.uBoard2|as_crispy_field }} {{ form.mGroup2|as_crispy_field }} {{ form.eResult4|as_crispy_field }} {{ form.pYear4|as_crispy_field }} {{ form.insName4|as_crispy_field }}
+            </div>
+        </div>
+        <br />
+
+        <center>
+            <br />
+            <input type="submit" value="Submit" class="btn btn-outline-success px-5 px-2" />
+        </center><br /><br />
+    </form>
+</div>
+{% endif %} {% endblock %}
